@@ -13,3 +13,5 @@ Con el mismo código se ha conseguido hacer un ejemplo de app que fucniona en :
 4. Apple TV
 
 (Nota): No se ha dado soporte sobre MacOS pero sería muy sencillo, al igual que el resto de plataformas.
+
+https://pbs.twimg.com/media/EQCB7dEUUAA5VFB?format=jpg&name=4096x4096
