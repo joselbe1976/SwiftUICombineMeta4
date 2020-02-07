@@ -14,13 +14,29 @@ import Combine
 final class loadEmployeeImage : ObservableObject {
     @Published var image = Image(systemName: "person.fill"){
         didSet{
-            print("Asignada Imagen nueva")
+            //print("Asignada Imagen nueva")
         }
     }
     
     var subscriber:AnyCancellable?
     
     func loadImage(idImage : String) {
+        
+            // if is in cache not access to Network
+        
+            if (ExistCacheFile(idFile: idImage)){
+                let img : Data? = getCacheFile(idFile: idImage)
+                DispatchQueue.main.async {
+                    self.image = Image(uiImage: UIImage(data: img!)!)
+                    print("Image of cache")
+                }
+                return
+            }
+        
+            // not exist in cache
+        
+            print("Image of NetWork")
+        
             let session = URLSession.shared
             let url = URL(string: "http://172.20.2.142:8100/REST/mfbcache?idapp=APP1&idclient=ios&idCache=\(idImage)")
         
@@ -41,15 +57,22 @@ final class loadEmployeeImage : ObservableObject {
                     $0.m4.data(using: .utf8)!
                 }
                 .decode(type: m4image.self, decoder: JSONDecoder())
+                .receive(on: DispatchQueue.main)
                 .map{
-                    UIImage(data: Data(base64Encoded: $0.file, options: .init(rawValue: 0))!) //decodeBAse64 -> UIImage
+                    
+                    let data = Data(base64Encoded: $0.file, options: .init(rawValue: 0))!  // String b64 -> Data
+                    
+                    // Save if not exist
+                    if (!ExistCacheFile(idFile: idImage)){
+                        InsertCacheFile(idFile: idImage, data: data)
+                    }
+                    return UIImage(data: data) //Data -> UIImage
                 }
                 .map { data -> Image in
                     Image(uiImage: data!)
                 }
                 .replaceEmpty(with: Image(systemName: "person.fill"))
                 .replaceError(with: Image(systemName: "person.fill"))
-                .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
                 .assign(to: \.image, on: self)
                    

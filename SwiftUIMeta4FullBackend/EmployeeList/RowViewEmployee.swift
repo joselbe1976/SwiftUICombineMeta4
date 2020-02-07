@@ -18,7 +18,7 @@ struct RowViewEmployee: View {
     var body: some View {
         NavigationLink(destination: DetailEmployeeView(empleado: empleado, foto: image.image), isActive: self.$isActive, label: {
         
-            VStack(alignment: .tra) {
+            VStack(alignment: .leading) {
                    HStack {
                        image.image
                            .resizable()
@@ -33,7 +33,9 @@ struct RowViewEmployee: View {
                        .padding()
                    }
                    .onAppear{
+                    if (self.empleado.idphoto != "" && self.empleado.idphoto != " "){
                            self.image.loadImage(idImage: self.empleado.idphoto!)
+                    }
                    }
                }
         })

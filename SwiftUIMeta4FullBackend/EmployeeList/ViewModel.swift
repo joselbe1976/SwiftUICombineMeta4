@@ -26,17 +26,10 @@ final class loadDataEmployees : ObservableObject {
     var subscriber:AnyCancellable?
     
     func loadData() {
-            let session = URLSession.shared
-            let url = URL(string: "http://172.20.2.142:8100/REST/mfbdemo?idapp=APP1&idclient=ios&offset=4&filter=&begin=0")
+           
+           let (session, request) = BaseNetwork().getSessionEmployees(offSet: 40)
         
-            let request = NSMutableURLRequest(url: url!)
-             // headers
-             request.httpMethod = "GET"
-             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-             request.addValue("Basic Sk9TRUxCRToxMjM0NTY=", forHTTPHeaderField: "Authorization") // las credenciales a Meta4
-        
-        
-            subscriber = session.dataTaskPublisher(for: request as URLRequest)
+           subscriber = session.dataTaskPublisher(for: request as URLRequest)
                 .map {
                     let cad = String(data: $0.data, encoding: .windowsCP1252)!
                     return cad.data(using: .utf8)!
