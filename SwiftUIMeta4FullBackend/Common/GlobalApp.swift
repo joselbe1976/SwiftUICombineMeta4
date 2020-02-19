@@ -15,7 +15,7 @@ struct GlobalParams {
     let idMeta4Client : String = "ios"
     let offSetGlobal : Int = 20  // offset global por defecto
     let adminCredential : String = "Basic Sk9TRUxCRToxMjM0NTY=" // Credencial administradora
-    let api : String = "http://172.20.2.142:8100/REST/" // URL API de Meta4
+    let api : String = "http://172.20.2.131:8003/REST/" // URL API de Meta4
 }
 
 

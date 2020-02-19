@@ -33,7 +33,9 @@ struct ContentView: View {
                         RowViewEmployee(empleado: empleado)
                         
                     }
-                }
+              
+                }.listStyle(CarouselListStyle())
+    
     }
     #endif
 }
