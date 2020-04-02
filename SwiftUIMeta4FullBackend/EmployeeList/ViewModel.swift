@@ -19,6 +19,7 @@ final class loadDataEmployees : ObservableObject {
     
     
     init(){
+            
               self.loadData()
     }
     
@@ -55,5 +56,8 @@ final class loadDataEmployees : ObservableObject {
     func testData() -> employee{
         employee(idrh: "10010", name: "Jose Luis Bustos", idphoto: "PHOTO-0001-M100492", start: "01/01/2010")
     }
+    
+    
+    
     
 }

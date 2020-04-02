@@ -127,6 +127,7 @@
 		72379C2223ED61B40076F419 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		72379C2423ED62210076F419 /* LoginViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewContent.swift; sourceTree = "<group>"; };
 		72379C2623ED62BB0076F419 /* GlobalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalApp.swift; sourceTree = "<group>"; };
+		72393ACF243619B7005E9F6C /* SwiftUIMeta4FullBackend.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUIMeta4FullBackend.entitlements; sourceTree = "<group>"; };
 		723FFF9123E8A4220030761D /* SwiftUIMeta4FullBackend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIMeta4FullBackend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		723FFF9423E8A4220030761D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		723FFF9623E8A4220030761D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +260,7 @@
 		723FFF9323E8A4220030761D /* SwiftUIMeta4FullBackend */ = {
 			isa = PBXGroup;
 			children = (
+				72393ACF243619B7005E9F6C /* SwiftUIMeta4FullBackend.entitlements */,
 				72379C2123ED61280076F419 /* Common */,
 				72379C1C23ED60990076F419 /* Login */,
 				72DB1CF523EAC3AF00ED1934 /* EmployeeList */,
@@ -797,7 +799,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -851,7 +853,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -865,16 +867,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftUIMeta4FullBackend/SwiftUIMeta4FullBackend.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIMeta4FullBackend/Preview Content\"";
-				DEVELOPMENT_TEAM = 5VE37W94CE;
+				DEVELOPMENT_TEAM = AH9SPD7BPD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUIMeta4FullBackend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = bustos.com.swiftui.mfb.SwiftUIMeta4FullBackend;
+				MARKETING_VERSION = 3;
+				PRODUCT_BUNDLE_IDENTIFIER = es.equilibrha.portalmobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -885,16 +889,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftUIMeta4FullBackend/SwiftUIMeta4FullBackend.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIMeta4FullBackend/Preview Content\"";
-				DEVELOPMENT_TEAM = 5VE37W94CE;
+				DEVELOPMENT_TEAM = AH9SPD7BPD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUIMeta4FullBackend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = bustos.com.swiftui.mfb.SwiftUIMeta4FullBackend;
+				MARKETING_VERSION = 3;
+				PRODUCT_BUNDLE_IDENTIFIER = es.equilibrha.portalmobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
